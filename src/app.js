@@ -1,18 +1,46 @@
-import React from 'react';
-import {render} from 'react-dom';
-import AwesomeComponent from './components/AwesomeComponent.js';
+/*
+*******************
+	Packages
+*******************
+*/
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { BrowserRouter as Router } from 'react-router-dom'
 
-class App extends React.Component {
-  render () {
 
-    return (
-		<div>
-			<p> Hello React.</p>
-			<AwesomeComponent title="Front End Development" />
+/*
+*******************
+	Components
+*******************
+*/
+import NavComponent from './components/NavComponent.js';
+import PageComponent from './components/PageComponent.js';
+
+
+/*
+*******************
+	App
+*******************
+*/
+const App = () => (
+
+	<Router>
+		<div class="container">
+			<NavComponent />
+			<PageComponent />
 		</div>
-    )
+	</Router>
 
-  }
-}
+)
 
-render(<App/>, document.getElementById('app'));
+
+/*
+*******************
+	Render
+*******************
+*/
+const root = document.getElementById('root')
+
+ReactDOM.render((
+	<App />
+), root)

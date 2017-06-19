@@ -1,6 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const extractText = require('extract-text-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 
 const BUILD_DIR = path.resolve(__dirname, 'dist');
@@ -8,7 +8,7 @@ const SRC_DIR = path.resolve(__dirname, 'src');
 const SCSS_DIR = SRC_DIR + '/scss/main.scss';
 const APP_DIR = SRC_DIR + '/app.js';
 
-const extractSass = new ExtractTextPlugin({
+const extractSass = new extractText({
     filename: "styles.css"
 });
 
@@ -34,7 +34,30 @@ const config = {
 				test: /\.scss$/,
 				use: extractSass.extract({
 	               	fallback: 'style-loader',
-		            use: ['css-loader', 'sass-loader']	
+		            use: [
+		            	{
+		            		loader: 'css-loader?-autoprefixer!postcss-loader', 
+		            		options : { 
+		            			autoprefixer: ({
+		            				browsers: [
+									  "Chrome >= 4",
+									  "Firefox >= 2",
+									  "Explorer >= 8",
+									  "Safari >= 4",
+									  "Edge >= 12"
+		            				]
+		            			}),
+		            			sourceMap: true, 
+		            			importLoaders: 1 
+		            		} 
+		            	},
+		            	{
+		            		loader: 'postcss-loader'
+		            	},
+		            	{
+		            		loader: 'sass-loader' 
+		            	}
+		            ]
 	            })
 			}
 		],
