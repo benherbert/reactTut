@@ -3,10 +3,9 @@ import React from 'react';
 export default class ProgressBarComponent extends React.Component {
 
 	constructor(props) {
-
 		super(props);
-
 	}
+
 
 	render() {
 

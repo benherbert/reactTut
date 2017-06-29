@@ -9,7 +9,9 @@
     "start": "echo \"Error: no start command specified\"",
     "stop": "echo \"Error: no stop command specified\"",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "custom": "echo \"hello world\" && exit 1"
+    "custom": "echo \"hello world\" && exit 1",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "author": "Ben Herbert",
   "license": "ISC",
@@ -37,6 +39,7 @@
     "sass-resources-loader": "^1.2.1",
     "style-loader": "^0.18.2",
     "webpack": "^2.6.1",
-    "webpack-dev-server": "^2.4.5"
+    "webpack-dev-server": "^2.4.5",
+    "@storybook/react": "^3.1.7"
   }
 }

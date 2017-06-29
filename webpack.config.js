@@ -40,14 +40,14 @@ const config = {
 		            		options : { 
 		            			autoprefixer: ({
 		            				browsers: [
-									  "Chrome >= 4",
-									  "Firefox >= 2",
-									  "Explorer >= 8",
-									  "Safari >= 4",
-									  "Edge >= 12"
+									  "Chrome >= 53",
+									  "Firefox >= 50",
+									  "Explorer >= 11",
+									  "Safari >= 9",
+									  "Edge >= 14"
 		            				]
 		            			}),
-		            			sourceMap: true, 
+		            			sourceMap: false, 
 		            			importLoaders: 1 
 		            		} 
 		            	},

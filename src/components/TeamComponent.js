@@ -14,16 +14,32 @@ export default class TeamComponent extends React.Component {
 
 		return this.people.map( (person, index, arr) => 
 
-			<div key={person.id} data={person.name} class="col-md-4">
+			<div 
+				key={person.id} 
+				data={person.name} 
+				class="col-md-4">
+
 				<div class="panel panel-default">
+
 					<div class="panel-heading">
-						<h4>{person.name}<small>&nbsp; {person.role}</small></h4>
-						<span class="label label-default">{person.team}</span>
+
+						<h4>
+							{person.name}&nbsp;
+							 <small>{person.role}</small>
+						</h4>
+
+						<span class="label label-default">
+							{person.team}
+						</span>
+
 					</div>
+
 					<div class="panel-body">
 						{this.skillMap(person)}
 					</div>
+
 				</div>
+
 			</div>
 
 		)
